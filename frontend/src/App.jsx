@@ -37,7 +37,7 @@ const EmailResponseGenerator = () => {
   // Fetch history when logged in
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:5000/history', {
+      fetch('https://mailassist-backend.onrender.com/history', {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -50,7 +50,7 @@ const EmailResponseGenerator = () => {
     e.preventDefault();
     setAuthError('');
     try {
-      const res = await fetch(`http://localhost:5000/${authMode}`, {
+      const res = await fetch(`https://mailassist-backend.onrender.com/${authMode}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: authEmail, password: authPassword })
@@ -85,7 +85,7 @@ const EmailResponseGenerator = () => {
     const emailText = inputEmail;
     const tone = selectedTone;
     try {
-      const response = await fetch('http://localhost:5000/generate', {
+      const response = await fetch('https://mailassist-backend.onrender.com/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ const EmailResponseGenerator = () => {
       setEditableResponse(data.response);
       setIsEditMode(false);
       // Refresh history
-      const histRes = await fetch('http://localhost:5000/history', {
+      const histRes = await fetch('https://mailassist-backend.onrender.com/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const histData = await histRes.json();
