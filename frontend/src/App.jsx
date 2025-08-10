@@ -472,7 +472,7 @@ const EmailResponseGenerator = () => {
         }`}>
           <span className="inline-flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            Connected to Google Gemini AI (localhost:5000)
+            Connected to Google Gemini AI
           </span>
         </div>
       </div>
