@@ -133,7 +133,5 @@ app.get("/history", authMiddleware, async (req, res) => {
     }
 });
 
-const Port = 5000;
-app.listen(Port, () => {
-    console.log(`Server is running on port ${Port}`);
-});
+// Remove app.listen and export the app for Vercel
+module.exports = app;
